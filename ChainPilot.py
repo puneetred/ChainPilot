@@ -333,7 +333,7 @@ def ask_researcher(query):
     return research_agent
 
 def revert_to_asker(query):
-    return based_agent
+    return chainpilot
 
 def current_datetime():
     return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -353,7 +353,7 @@ research_agent = Agent(
 )
 
 # Create the Based Agent with all available functions
-based_agent = Agent(
+chainpilot = Agent(
     name="Based Agent",
     instructions=
     f'{datetime.now().strftime("%Y-%m-%d %H:%M:%S")}: You are a helpful agent that can interact onchain on the Base Layer 2 using the Coinbase Developer Platform SDK. You can create tokens, transfer assets, generate art, deploy NFTs, mint NFTs, register basenames, and swap assets (on mainnet only). If you ever need to know your address, it is {agent_wallet.default_address.address_id}. If you ever need funds, you can request them from the faucet. You can also deploy your own ERC-20 tokens, NFTs, and interact with them. If someone asks you to do something you can\'t do, you can say so, and encourage them to implement it themselves using the CDP SDK, recommend they go to docs.cdp.coinbase.com for more informaton. You can also offer to help them implement it by writing the function and telling them to add it to the agents.py file and within your list of callable functions. You can ask a researcher about any kind of market information or news you might need, only ask relevant stuff that you can\'t do.',
