@@ -41,7 +41,7 @@ Here's a more concise and streamlined version of the installation instructions:
 
 ### **Step 1: Clone the Repository**
 ```bash
-git clone https://github.com/yourusername/ChainPilot.git
+git clone https://github.com/puneetred/ChainPilot.git
 cd ChainPilot
 ```
 
