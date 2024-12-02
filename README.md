@@ -35,6 +35,8 @@ Before running the program, ensure the following prerequisites are met:
   - `OPENAI_API_KEY` OpenAI API key.
 - **Blockchain Network**: Base Layer 2 blockchain (Mainnet or Sepolia testnet).
 
+Here's a more concise and streamlined version of the installation instructions:
+
 ## **Installation**
 
 ### **Step 1: Clone the Repository**
@@ -43,56 +45,36 @@ git clone https://github.com/yourusername/ChainPilot.git
 cd ChainPilot
 ```
 
-### **Step 2: Set Up the Virtual Environment**
+### **Step 2: Set Up Virtual Environment & Dependencies**
 ```bash
 python -m venv .venv
 source .venv/bin/activate  # On Windows, use `.venv\Scripts\activate`
-```
-
-### **Step 3: Install Dependencies**
-```bash
 pip install -r requirements.txt
 ```
 
-### **Step 4: Set Up Environment Variables**
-Create a `.env` file in the root directory and add the following:
+### **Step 3: Configure API Keys**
+Create a `.env` file in the root directory with the following keys:
 ```plaintext
-CDP_API_KEY_NAME=your_cdp_api_key
-CDP_PRIVATE_KEY=your_private_key
+CDP_API_KEY_NAME=your_coinbase_api_key
+CDP_PRIVATE_KEY=your_ethereum_private_key
 OPENAI_API_KEY=your_openai_api_key
 ```
 
----
+### **Obtaining API Keys**
 
-### **How to Create and Add API Keys**
+#### Coinbase Developer Platform
+1. Visit [Coinbase Developer Platform](https://developer.coinbase.com)
+2. Create an account and generate an API key
+3. Copy the API key and secret key for the `.env` file
 
-To use the AI-powered features of ChainPilot, such as conversational interfaces and art generation, you will need an OpenAI API key. Follow these steps to create and add it:
+#### OpenAI API
+1. Go to [OpenAI's API platform](https://platform.openai.com/signup)
+2. Create an account or log in
+3. Navigate to **API Keys**
+4. Click **Create new secret key**
+5. Copy the generated API key to your `.env` file
 
-
-##### **Generate `CDP_API_KEY_NAME` & `CDP_SECRET_KEY`:**
-1. Create an account on [Coinbase Developer Platform](https://developer.coinbase.com).
-2. Navigate to the API section and generate a new API key. While creating the API key, Coinbase will provide a secret key.
-3. Copy the API key and save it for use in the `.env` file.
-4. Update the `.env` file with the following:
-   ```
-   CDP_API_KEY_NAME=<your-api-key>
-   CDP_SECRET_KEY=<your-secret-key>
-   ```  
-
-##### **Create an OpenAI API Key**
-1. Visit [OpenAI's API platform](https://platform.openai.com/signup).
-2. Sign up for an account or log in if you already have one.
-3. Navigate to the **API Keys** section under your account settings.
-4. Click **Create new secret key**.
-5. Copy the generated API key.
-
-##### **Add OpenAI API Key to `.env` File**
-1. Open your `.env` file in a text editor.
-2. Add the OpenAI API key you copied to the file under the line:
-   ```
-   OPENAI_API_KEY=your_openai_api_key
-   ```
-   Replace `your_openai_api_key` with the key you generated.
+**Note**: Protect your API keys and never share them publicly.
 
 ---
 
