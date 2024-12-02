@@ -2,7 +2,7 @@ import time
 import json
 from swarm import Swarm
 from swarm.repl import run_demo_loop
-from ChainPilot import chainpilot
+from ChainPilot-cli import chainpilot
 from openai import OpenAI
 
 
