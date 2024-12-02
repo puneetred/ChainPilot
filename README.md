@@ -4,6 +4,13 @@
 
 ChainPilot is a blockchain interaction agent that integrates blockchain functionalities with AI-based operations. Built on the Coinbase Developer Platform (CDP) SDK, ChainPilot can autonomously interact with the Ethereum Layer 2 (Base) network, perform blockchain tasks, and provide an AI-powered conversational interface via a Streamlit app.
 
+## **Screenshots**
+
+### **Streamlit App**
+
+![Streamlit App](assets/img/screenshot_1.jpeg)
+![Streamlit App](assets/img/screenshot_2.jpeg)
+
 ## **Features**
 
 - **Blockchain Interactions**:
