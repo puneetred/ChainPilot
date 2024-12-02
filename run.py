@@ -14,7 +14,7 @@ def run_autonomous_loop(agent, interval=10):
     client = Swarm()
     messages = []
 
-    print("Starting autonomous Based Agent loop...")
+    print("Starting autonomous ChainPilot loop...")
 
     while True:
         # Generate a thought
@@ -42,12 +42,12 @@ def run_autonomous_loop(agent, interval=10):
 # this is the main loop that runs the agent in two-agent mode
 # you can modify this to change the behavior of the agent
 def run_openai_conversation_loop(agent):
-    """Facilitates a conversation between an OpenAI-powered agent and the Based Agent."""
+    """Facilitates a conversation between an OpenAI-powered agent and the ChainPilot."""
     client = Swarm()
     openai_client = OpenAI()
     messages = []
 
-    print("Starting OpenAI-Based Agent conversation loop...")
+    print("Starting OpenAI-ChainPilot conversation loop...")
 
     # Initial prompt to start the conversation
     openai_messages = [{
@@ -59,7 +59,7 @@ def run_openai_conversation_loop(agent):
         "role":
         "user",
         "content":
-        "Start a conversation with the Based Agent and guide it through some blockchain tasks."
+        "Start a conversation with the ChainPilot and guide it through some blockchain tasks."
     }]
 
     while True:
@@ -70,22 +70,22 @@ def run_openai_conversation_loop(agent):
         openai_message = openai_response.choices[0].message.content
         print(f"\n\033[92mOpenAI Guide:\033[0m {openai_message}")
 
-        # Send OpenAI's message to Based Agent
+        # Send OpenAI's message to ChainPilot
         messages.append({"role": "user", "content": openai_message})
         response = client.run(agent=agent, messages=messages, stream=True)
         response_obj = process_and_print_streaming_response(response)
 
-        # Update messages with Based Agent's response
+        # Update messages with ChainPilot's response
         messages.extend(response_obj.messages)
 
-        # Add Based Agent's response to OpenAI conversation
-        based_agent_response = response_obj.messages[-1][
-            "content"] if response_obj.messages else "No response from Based Agent."
+        # Add ChainPilot's response to OpenAI conversation
+        chainpilot_response = response_obj.messages[-1][
+            "content"] if response_obj.messages else "No response from ChainPilot."
         openai_messages.append({
             "role":
             "user",
             "content":
-            f"Based Agent response: {based_agent_response}"
+            f"ChainPilot response: {chainpilot_response}"
         })
 
         # Check if user wants to continue
@@ -189,5 +189,5 @@ def main():
 
 
 if __name__ == "__main__":
-    print("Starting Based Agent...")
+    print("Starting ChainPilot...")
     main()
