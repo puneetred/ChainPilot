@@ -20,9 +20,6 @@ PRIVATE_KEY = os.environ.get("CDP_PRIVATE_KEY", "").replace('\\n', '\n')
 
 Cdp.configure(API_KEY_NAME, PRIVATE_KEY)
 
-print(API_KEY_NAME)
-print(PRIVATE_KEY)
-
 agent_wallet = Wallet.create()
 faucet = agent_wallet.faucet()
 

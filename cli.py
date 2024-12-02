@@ -2,7 +2,7 @@ import time
 import json
 from swarm import Swarm
 from swarm.repl import run_demo_loop
-from ChainPilot_cli import chainpilot
+from ChainPilot_Agent import chainpilot_agent
 from openai import OpenAI
 
 
@@ -179,9 +179,9 @@ def main():
     mode = choose_mode()
 
     mode_functions = {
-        'chat': lambda: run_demo_loop(chainpilot),
-        'auto': lambda: run_autonomous_loop(chainpilot),
-        'two-agent': lambda: run_openai_conversation_loop(chainpilot)
+        'chat': lambda: run_demo_loop(chainpilot_agent),
+        'auto': lambda: run_autonomous_loop(chainpilot_agent),
+        'two-agent': lambda: run_openai_conversation_loop(chainpilot_agent)
     }
 
     print(f"\nStarting {mode} mode...")
