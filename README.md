@@ -6,8 +6,6 @@ ChainPilot is a blockchain interaction agent that integrates blockchain function
 
 ## **Screenshots**
 
-### **Streamlit App**
-
 ![Streamlit App](assets/img/screenshot_1.jpeg)
 ![Streamlit App](assets/img/screenshot_2.jpeg)
 
